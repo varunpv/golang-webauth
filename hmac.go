@@ -55,7 +55,7 @@ func signMessage(message []byte) ([]byte, error) {
 	h := hmac.New(sha512.New, key)
 	_, err := h.Write(message)
 	if err != nil {
-		return nil, fmt.Errorf("Error in SighMessage function : %w", err)
+		return nil, fmt.Errorf("error in sighMessage function : %w", err)
 	}
 	return h.Sum(nil), nil
 }
