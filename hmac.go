@@ -3,6 +3,7 @@ package main
 import (
 	"bufio"
 	"crypto/hmac"
+	"crypto/rand"
 	"crypto/sha512"
 	"fmt"
 	"os"
@@ -13,6 +14,7 @@ import (
 var key = make([]byte, 64)
 
 func testhmac() {
+	rand.Read(key)
 	fmt.Println("Enter your username")
 	s := bufio.NewScanner(os.Stdin)
 	s.Scan()
