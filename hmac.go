@@ -32,7 +32,7 @@ func testhmac() {
 	}
 	fmt.Println("okay let me test you.... what is the token? ")
 	s.Scan()
-	inputeToken := getbyteslice(s.Text())
+	inputeToken := getByteSlice(s.Text())
 	if ok, _ := validateMessage(inputeToken, input); ok {
 		fmt.Println("Nice !")
 	} else {
@@ -41,7 +41,7 @@ func testhmac() {
 
 }
 
-func getbyteslice(s string) []byte {
+func getByteSlice(s string) []byte {
 	var result []byte
 	stringnum := strings.Fields(s)
 	for _, is := range stringnum {
